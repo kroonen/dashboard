@@ -2,7 +2,7 @@
 
 ![image](https://github.com/user-attachments/assets/41dea247-1eb8-4177-a69a-93a63108420c)
 
-## Demo : https://kroonen.github.io/dashboard/
+** Demo : https://kroonen.github.io/dashboard/ **
 
 
 A versatile and customizable productivity dashboard that runs entirely in your browser. Manage tasks, take notes, organize your workflow with a Kanban board, and more - all in one place.
