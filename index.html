@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <!-- External CSS file for styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery and jQuery UI libraries for interactive features -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <!-- Semi-transparent overlay for background blur effect -->
+    <div class="overlay"></div>
+
+    <!-- Main container for the application -->
+    <div class="container">
+        <!-- Navigation tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="app.switchTab(0)">Dashboard 1</div>
+            <div class="tab" onclick="app.switchTab(1)">Kanban</div>
+            <div class="tab" onclick="app.switchTab(2)">Settings</div>
+            <button id="new-tab-btn" onclick="app.addNewTab()">+</button>
+        </div>
+
+        <!-- Dashboard 1: Main productivity view -->
+        <div id="dashboard-0" class="dashboard active">
+            <!-- Button to add new cards to the dashboard -->
+            <button class="new-card-btn" onclick="app.addNewCard()">+</button>
+
+            <!-- Tasks Card -->
+            <div id="tasks" class="card" style="width: 300px; height: 400px; top: 100px; left: 50px;">
+                <div class="card-header">
+                    <h2>Tasks</h2>
+                </div>
+                <input type="text" id="new-task" placeholder="Add a new task">
+                <ul id="task-list"></ul>
+            </div>
+            
+            <!-- Quick Notes Card -->
+            <div id="notes" class="card" style="width: 300px; height: 400px; top: 100px; left: 400px;">
+                <div class="card-header">
+                    <h2>Quick Notes</h2>
+                </div>
+                <div id="note-content" contenteditable="true" class="markdown-editor">Remember to follow up with clients about the new proposal.</div>
+            </div>
+            
+            <!-- Upcoming Events Card -->
+            <div id="calendar" class="card" style="width: 300px; height: 400px; top: 100px; left: 750px;">
+                <div class="card-header">
+                    <h2>Upcoming Events</h2>
+                </div>
+                <input type="text" id="new-event" placeholder="Add a new event">
+                <ul id="event-list"></ul>
+            </div>
+        </div>
+        
+        <!-- Dashboard 2: Kanban Board -->
+        <div id="dashboard-1" class="dashboard">
+            <div class="kanban-board">
+                <!-- To Do Column -->
+                <div class="kanban-column" id="todo">
+                    <h2>To Do</h2>
+                    <div class="kanban-cards"></div>
+                    <input type="text" placeholder="Add a new task">
+                </div>
+                <!-- In Progress Column -->
+                <div class="kanban-column" id="in-progress">
+                    <h2>In Progress</h2>
+                    <div class="kanban-cards"></div>
+                    <input type="text" placeholder="Add a new task">
+                </div>
+                <!-- Done Column -->
+                <div class="kanban-column" id="done">
+                    <h2>Done</h2>
+                    <div class="kanban-cards"></div>
+                    <input type="text" placeholder="Add a new task">
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard 3: Settings Panel -->
+        <div id="dashboard-2" class="dashboard">
+            <h2>Settings</h2>
+            <!-- Wallpaper change option -->
+            <div class="settings-option">
+                <button id="change-wallpaper-btn" class="settings-btn">Change Wallpaper</button>
+                <input type="file" id="wallpaper-input" style="display: none;">
+            </div>
+            <!-- Data export option -->
+            <div class="settings-option">
+                <button id="export-data-btn" class="settings-btn">Export Data</button>
+            </div>
+            <!-- Data import option -->
+            <div class="settings-option">
+                <button id="import-data-btn" class="settings-btn">Import Data</button>
+                <input type="file" id="import-input" style="display: none;">
+            </div>
+            <!-- Reset all data option -->
+            <div class="settings-option">
+                <button id="reset-data-btn" class="settings-btn">Reset All Data</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main application JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
