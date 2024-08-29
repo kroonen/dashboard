@@ -1,6 +1,5 @@
 # Productivity Dashboard
 
-![image](https://github.com/user-attachments/assets/41dea247-1eb8-4177-a69a-93a63108420c)
 
 **Demo :** https://kroonen.github.io/dashboard/
 
